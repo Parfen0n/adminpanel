@@ -9,11 +9,11 @@ class App extends Component{
     name: null,
     country: null,
     city: null,
-    // requirements: []
-    // statistics: [],
-    // benefits: [],
-    // disadvantages: [],
-    // faculties: [],
+    requirements: [],
+    statistics: [],
+    benefits: [],
+    disadvantages: [],
+    faculties: [],
     history: null,
     priceOfEducation: null,
     priceOfLiving: null,
@@ -57,7 +57,7 @@ render() {
         <p className='title'>Город</p>
         <input className='input_area' value={city} onChange={(e) => this.setState({city: e.target.value})}/>
       </div>
-      {/* <div className='area'>
+      <div className='area'>
         <p className='title'>Требования</p>
         {requirements.map(item => {
           return (
@@ -68,8 +68,8 @@ render() {
           )
         })}
         <button onClick={() => this.onAddArea()}>Добавить поле</button>
-      </div> */}
-      {/* <div className='area'>
+      </div>
+      <div className='area'>
         <p className='title'>Статистика</p>
         {statistics.map(item => {
           return (
@@ -118,7 +118,7 @@ render() {
           )
         })}
         <button onClick={() => this.onAddArea()}>Добавить поле</button>
-      </div> */}
+      </div>
       <div className='area'>
         <p className='title'>История</p>
         <textarea value={history} onChange={(e) => this.setState({ history: e.target.value})}/>
