@@ -18,7 +18,8 @@ class App extends Component{
     priceOfEducation: null,
     priceOfLiving: null,
     briefInfo: null,
-    id: null
+    id: null,
+    sended: false
   }
 
   onSend() {
@@ -32,7 +33,10 @@ class App extends Component{
         briefInfo: this.state.briefInfo
     })
     .then(response => {
-
+      this.setState({
+        sended: true
+      })
+      setTimeout(() => this.setState({ sended: false}), 4000);
     })
     .catch(error => {
 
@@ -137,6 +141,11 @@ render() {
         <textarea value={briefInfo} onChange={(e) => this.setState({ briefInfo: e.target.value})}/>
         <button style={{marginTop: '20px', fontSize: '20px', padding: '5px', width: '200px'}}onClick={() => this.onSend()}>Отправить</button>
       </div> 
+      {this.state.sended &&
+        <p className='sended_text'>
+          Загружено!
+        </p>
+      }
 
     </div>
 
